@@ -1,0 +1,271 @@
+/*as tegs section é a formatação para o fundo em video mp4 na tela 
+do site, o site de referencia é: https://www.youtube.com/watch?v=Pzx0jkIHRfY&t=302s*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: url('imagem.jpg');
+}
+
+.header {
+    /*essa é aquela faixa de cima*/
+    background: #23232e;
+    /*esse codigo de baixo foi para dar uma area de respiro para quem estiver acessando o site pelo celular*/
+    padding-inline: 16px;
+}
+
+.nav {
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+    /*o display flex fa os itens ficar um do lado do outro*/
+    display: flex;
+    /*o justify coloca um espaçamento entre os itens, ou seja, um espaço da logo com os itens*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 4px; 
+    color: #fff;  
+}
+a {
+    font-family: sans-serif;
+    /*função abaixa foi para tirar o sublinhado dos itens*/
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+    /*o list style none serve para tirar aquelas bolinhas dos nossos itens*/
+    list-style: none;
+}
+.nav-list a:hover{
+    background-color: white;
+    color: black;
+}
+    /*o nav lista a falamos com cada itens individualmente*/
+.nav-list a {
+    font-size: 18px;
+    color: #fff;
+    /*é sempre bom usar padding nos links para facilitar a vida do usuário do celular*/
+    padding-block: 16px;
+}
+
+.hamburger {
+    /*o display none é para o cursor hambuger aparecer somente no celular*/ 
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    /*cursor pointer é para aparecer aquela mãozinha quando a pessoa passa com a seta por cima no cursor hamburger*/
+    cursor: pointer;
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+    /*e quando a tela for meno no pc ou notebook no .hambuger criamos um display block*/
+    .hamburger {
+        display: block;
+        /*esse z-index é para após o usuário clicar no menu hamburger poder clicar de volta para fechar*/
+        z-index: 1;
+    }
+
+/*no celular queremos essa lista em tela cheia*/
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        /*o codigo de baixo é a transparencia escura no menu hamburger*/
+        background-color: rgba(0, 0, 0, 0.7);
+        /*usando uma propriedade clip path eu coloco uma mascara nos itens*/
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+/*nas configurações abaixo eu coloco os itens alinhados ao centro*/
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+/*pointer events é uma função para q o usuário não seja capaz de click em algo que não está aparecendo na tela*/
+        pointer-events: none;
+    }
+
+    .nav-list a {
+        font-size: 24px;
+        opacity: 0;
+    }
+/*nos nav-list eu coloquei em cada um um delei para cada item aparecer um de cada vez*/
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.10s;
+    }
+
+     .nav-list li:nth-child(4) a {
+        transition: 0.5s 0.14s;
+    }
+
+     .nav-list li:nth-child(5) a {
+        transition: 0.5s 0.18s;
+    }
+
+    /* Estilos ativos */
+
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.active .hamburger {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+.nav img{
+    width: 150px;
+    height: 70px;
+    border-radius: 15%;
+}
+
+
+/*FIM DAS CONFIGURAÇÕES DO STYLE.CSS NO LOGIN.CSS*/ 
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.teste{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.conteiner{
+    width: 420px;
+    background-color: rgb(255, 255, 255);
+    border: 4px solid rgba(0, 0, 0, 0.2) ;
+    border-radius: 10px;
+    color:  rgb(48, 94, 218);
+    padding: 30px 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.conteiner h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+.tela-m{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.tela-m input{
+    width: 100%;
+    height:70%;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.2) ;
+    border-radius: 40px;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 35px 10px 10px;
+    text-align: center;
+    color: #020202 
+}
+
+.tela-m input::placeholder{
+    color:  rgb(68, 67, 67);
+}
+
+.tela-m i{
+    position: absolute;
+    right: 15px;
+    top: 15%;
+    font-size: 20px;
+}
+
+.clique{
+    width: 100%;
+    height: 35px;
+    margin: 2%;
+    background-color: rgb(48, 94, 218);
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+
+}
+
+.clique:hover{
+    background-color: rgb(110, 144, 239);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.registre{
+    font-size: 15px;
+    text-align: center;
+    margin: 20px, 0 15px;
+}
+
+.registre a{
+    text-decoration: none;
+}
+
+.registre a:hover{
+    text-decoration: underline;
+}

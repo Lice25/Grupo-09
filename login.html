@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <title>login</title>
+</head>
+<body>
+    <div class="header">
+     <nav class="nav">
+        <img src="/img/logotipo.jpg" alt="logo">
+            <button class="hamburger"></button>
+            <ul class="nav-list">
+                <li><a href="/index.html">Início</a></li>
+                 <li><a href="#">Sobre</a></li>
+                 <li><a href="/produtos/produtos.html">Produtos</a></li>
+                 <li><a href="/cadastro/cadastro.html">Cadastro</a></li>
+                <li><a href="/login/login.html">Login</a></li>
+            </ul>
+     </nav>
+    </div>
+    <div class="teste">
+     <div class="conteiner">
+      <form>
+          <h1>login</h1>
+          <div class="tela-m">
+              <input type="text" pattern="^[a-zA-Z]{6}$" minlength="6" maxlength="6" title="O login deve ter exatamente 6 letras." placeholder="Digite o login" required><br><br>
+              <i class="bx bxs-user"></i>
+          </div>
+          <div class="tela-m">
+              <input type="password" pattern="^[a-zA-Z]{8}$" minlength="8" maxlength="8" title="A senha deve ter exatamente 8 letras." placeholder="Digite a senha" required><br><br>
+              <i class="bx bxs-lock-alt"></i>
+          </div>
+          <button class="clique">Enviar</button>
+          <button class="clique">Redefinir</button>
+          <div class="registre">
+              <p>Não tem uma conta? <a href="/cadastro/cadastro.html">Cadastre-se</a></p>
+          </div>
+      </form>
+     </div>
+    </div>
+</body>
+</html>
